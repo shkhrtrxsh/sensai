@@ -1,11 +1,17 @@
 import React from "react";
 import { industries } from "../../../data/Industries";
-import onboardingForm from "./_components/onboarding-form";
+import OnboardingForm from "./_components/onboarding-form";
+import { getUserOnboardingStatus } from "../../../actions/user";
+import { redirect } from "next/navigation";
 
-function OnBoardingPage() {
+async function OnBoardingPage() {
+  const { isOnboarded } = await getUserOnboardingStatus();
+  if (isOnboarded) {
+    redirect("/dashboard");
+  }
   return (
     <main>
-      <onboardingForm industries={industries} />
+      <OnboardingForm industries={industries} />
     </main>
   );
 }
