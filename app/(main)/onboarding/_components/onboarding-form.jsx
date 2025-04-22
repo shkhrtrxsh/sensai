@@ -28,8 +28,7 @@ import {
 } from "../../../../components/ui/select";
 import { onboardingSchema } from "../../../../app/lib/schema";
 import { updateUser } from "../../../../actions/user";
-import useFetch from "../../../../hooks/use-fetch";
-
+import useFetch from "../../../hooks/use-fetch";
 const OnboardingForm = ({ industries }) => {
   const router = useRouter();
   const [selectedIndustry, setSelectedIndustry] = useState(null);
