@@ -15,12 +15,13 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "../components/ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu";
 import Image from "next/image";
-import { checkUser } from "../lib/checkUser";
+import { checkUser } from "@/lib/checkUser";
 
 export default async function Header() {
-  const user = await checkUser();
+  await checkUser();
+
   return (
     <header className="fixed top-0 w-full border-b bg-background/80 backdrop-blur-md z-50 supports-[backdrop-filter]:bg-background/60">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">

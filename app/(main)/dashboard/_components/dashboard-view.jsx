@@ -24,11 +24,12 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../../../../components/ui/card";
-import { Badge } from "../../../../components/ui/badge";
-import { Progress } from "../../../../components/ui/progress";
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Progress } from "@/components/ui/progress";
 
-function DashboardView({ insights }) {
+const DashboardView = ({ insights }) => {
+  // Transform salary data for the chart
   const salaryData = insights.salaryRanges.map((range) => ({
     name: range.role,
     min: range.min / 1000,
@@ -48,6 +49,7 @@ function DashboardView({ insights }) {
         return "bg-gray-500";
     }
   };
+
   const getMarketOutlookInfo = (outlook) => {
     switch (outlook.toLowerCase()) {
       case "positive":
@@ -221,6 +223,6 @@ function DashboardView({ insights }) {
       </div>
     </div>
   );
-}
+};
 
 export default DashboardView;

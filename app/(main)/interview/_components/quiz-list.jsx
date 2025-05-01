@@ -3,20 +3,20 @@
 import { useState } from "react";
 import { format } from "date-fns";
 import { useRouter } from "next/navigation";
-import { Button } from "../../../../components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../../../../components/ui/card";
+} from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from "../../../../components/ui/dialog";
+} from "@/components/ui/dialog";
 import QuizResult from "./quiz-result";
 
 export default function QuizList({ assessments }) {
@@ -36,7 +36,10 @@ export default function QuizList({ assessments }) {
                 Review your past quiz performance
               </CardDescription>
             </div>
-            <Button onClick={() => router.push("/interview/mock")}>
+            <Button
+              className="cursor-pointer"
+              onClick={() => router.push("/interview/mock")}
+            >
               Start New Quiz
             </Button>
           </div>

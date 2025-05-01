@@ -2,22 +2,19 @@
 
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
-import { Button } from "../../../../components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../../../../components/ui/card";
-import {
-  RadioGroup,
-  RadioGroupItem,
-} from "../../../../components/ui/radio-group";
-import { Label } from "../../../../components/ui/label";
-import { generateQuiz, saveQuizResult } from "../../../../actions/interview";
+} from "@/components/ui/card";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
+import { generateQuiz, saveQuizResult } from "@/actions/interview";
 import QuizResult from "./quiz-result";
-import useFetch from "../../../../hooks/use-fetch";
+import useFetch from "../../../../components/hooks/use-fetch";
 import { BarLoader } from "react-spinners";
 
 export default function Quiz() {

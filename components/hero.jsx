@@ -2,11 +2,12 @@
 
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
-import { Button } from "../components/ui/button";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const HeroSection = () => {
   const imageRef = useRef(null);
+  //   using useRef we can access html on any component and here we have used it to access the html og logo image
 
   useEffect(() => {
     const imageElement = imageRef.current;
@@ -27,7 +28,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="w-full min-h-screen pt-24 md:pt-32 pb-10 flex items-center justify-center">
+    <section className="w-full pt-36 md:pt-48 pb-10">
       <div className="space-y-6 text-center">
         <div className="space-y-6 mx-auto">
           <h1 className="text-5xl font-bold md:text-6xl lg:text-7xl xl:text-8xl gradient-title animate-gradient">
@@ -46,11 +47,11 @@ const HeroSection = () => {
               Get Started
             </Button>
           </Link>
-          <Link href="https://www.youtube.com/roadsidecoder">
+          {/* <Link href="https://www.youtube.com/roadsidecoder">
             <Button size="lg" variant="outline" className="px-8">
               Watch Demo
-            </Button>
-          </Link>
+            </Button> 
+          </Link> */}
         </div>
         <div className="hero-image-wrapper mt-5 md:mt-0">
           <div ref={imageRef} className="hero-image">
